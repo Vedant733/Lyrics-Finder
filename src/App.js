@@ -1,23 +1,15 @@
+import FindLyrics from './components/FindLyrics';
+import { primary } from './constants';
 import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ color: primary, textAlign: 'center' }}>
+      <h1>Lyrics Finder</h1>
+      <h4>Getting Your favourite Song's Lyrics At A Click Away.</h4>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <FindLyrics />
+      </div>
     </div>
   );
 }
