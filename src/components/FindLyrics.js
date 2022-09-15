@@ -43,6 +43,9 @@ function FindLyrics() {
             refetch()
         }
     }
+
+    console.log()
+
     return (
         <>
 
@@ -77,7 +80,7 @@ function FindLyrics() {
                             : song
                                 ? <>
                                     <h2>Lyrics</h2>
-                                    <h4 style={{ margin: '5em', marginTop: '1em', marginBottom: '1em' }}>{song?.message?.body?.lyrics?.lyrics_body.replace("******* This Lyrics is NOT for Commercial use *******", "")}</h4>
+                                    <h4 style={{ margin: '5em', marginTop: '1em', marginBottom: '1em' }}>{song?.message?.body?.lyrics?.lyrics_body.replace("******* This Lyrics is NOT for Commercial use *******", "").split("\n").map(line => <span key={Math.random()} style={{ display: 'block' }}>{line}</span>)}</h4>
                                     <sub>{song?.message?.body?.lyrics?.lyrics_copyright}</sub><br />
                                     <sub style={{ color: 'red' }}>{(data && song?.message?.body?.lyrics.explicit !== 0)
                                         ? "Explicit Content Alert"
